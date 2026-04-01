@@ -12,7 +12,6 @@ const Transactions = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalKey, setModalKey] = useState(0);
 
-  // Export currently filtered transactions
   const handleExport = () => {
     const filtered = applyFilters(transactions, filters);
     exportToCSV(filtered);
@@ -37,12 +36,12 @@ const Transactions = () => {
             {/* Export Button — visible to both roles */}
             <button
               onClick={handleExport}
-              className="flex items-center gap-2 px-4 py-2 border border-gray-200 dark:border-gray-700
+              className="flex items-center gap-2 px-3 py-2 sm:px-4 border border-gray-200 dark:border-gray-700
                 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800
                 text-sm font-medium rounded-xl transition-colors"
             >
               <Download size={16} />
-              Export CSV
+              <span className="hidden sm:inline">Export CSV</span>
             </button>
 
             {/* Add button — Admin only */}
@@ -52,11 +51,11 @@ const Transactions = () => {
                   setModalKey((prev) => prev + 1);
                   setIsModalOpen(true);
                 }}
-                className="flex items-center gap-2 px-4 py-2 bg-indigo-600 hover:bg-indigo-700
+                className="flex items-center gap-2 px-3 py-2 sm:px-4 bg-indigo-600 hover:bg-indigo-700
                   text-white text-sm font-medium rounded-xl transition-colors"
               >
                 <Plus size={16} />
-                Add Transaction
+                <span className="hidden sm:inline">Add Transaction</span>
               </button>
             )}
           </div>

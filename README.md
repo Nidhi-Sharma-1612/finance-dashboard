@@ -4,7 +4,7 @@ A clean, interactive finance dashboard built as part of a frontend developer int
 
 ## 🚀 Live Demo
 
-> Add your deployment link here (Vercel / Netlify)
+🔗 [https://finance-dashboard-beige-sigma.vercel.app/](https://finance-dashboard-beige-sigma.vercel.app/)
 
 ## 🛠️ Tech Stack
 

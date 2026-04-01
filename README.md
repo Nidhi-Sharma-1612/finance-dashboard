@@ -99,6 +99,7 @@ Switch roles using the dropdown in the top navbar:
 ### Additional Features
 
 - Dark mode with persistence
+- Export filtered transactions as CSV
 - localStorage data persistence
 - Responsive design (mobile + desktop)
 - Smooth page transitions

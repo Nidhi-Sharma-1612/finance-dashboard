@@ -110,3 +110,26 @@ export const applyFilters = (
 
   return result;
 };
+
+// Export transactions to CSV
+export const exportToCSV = (transactions: Transaction[]): void => {
+  const headers = ["Date", "Description", "Category", "Type", "Amount"];
+
+  const rows = transactions.map((t) => [
+    t.date,
+    t.description,
+    t.category,
+    t.type,
+    t.amount.toString(),
+  ]);
+
+  const csvContent = [headers, ...rows].map((row) => row.join(",")).join("\n");
+
+  const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = `fintrack_transactions_${new Date().toISOString().split("T")[0]}.csv`;
+  link.click();
+  URL.revokeObjectURL(url);
+};
